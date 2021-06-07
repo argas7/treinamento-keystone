@@ -9,11 +9,18 @@ Run `yarn install` or `npm install` on both client and server folders, this comm
 
 2. On the cluster's screen, go to **Database Access > Database Users > Add New Database User**, then create the user (remember the username and password, we're going to need them later).
 
-3. Now go to **Network Access > Ip Whitelist > Add IP Adress > Current Ip Adress**, to add your current ip address to the cluster's whitelist, you will need to do this with every source that will access your database.
+3. Now go to **Network Access > Ip Access List > Add IP Adress > Current Ip Adress**, to add your current ip address to the cluster's whitelist, you will need to do this with every source that will access your database.
 
-4. The mongo url will be:
+4. You also will need to create your first database, go to **Clusters > Collections > Add My Own Data > Choose your Database and Collection names**
 
-    mongodb://[USER]:[PASSWORD]@[SHARD_URL]/[DB_NAME]?ssl=true&replicaSet=[SHARD_NAME]&authSource=admin&retryWrites=true&w=majority
+5. Back to Clusters page and try to **connect** your cluster: **Connect > Connect your application > Driver: _Node.js_ Version: _2.2.12 or later_ (you will need to downgrade this part) > Copy your _connection string_**
+
+6. Replace <password> with the password for the project-tst user. Replace myFirstDatabase with the name of the database that connections will use by default.
+	6.1. Your connection string will be something like:
+
+		mongodb://[USER]:<password>@[SHARD_URL]/myFirstDatabase?ssl=true&replicaSet=[SHARD_NAME]&authSource=admin&retryWrites=true&w=majority
+
+		OBS: [USER], [SHARD_URL] and [SHARD_NAME] should come automaticaly filled
 
 ## 3. Create cloudinary account
 1. Go to [cloudinary images website](https://cloudinary.com/) and create an account.
