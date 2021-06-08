@@ -1,8 +1,7 @@
 const path = require('path');
 const cors = require('cors');
 
-const postController = require('../controllers/postController');
-const aboutUsController = require('../controllers/aboutUsController');
+const { aboutUsController, postController } = require('../controllers');
 
 module.exports = (app) => {
   app.use(cors());
